@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="152.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menú">
+         <font>
+            <Font name="Bodoni Bk BT Book" size="34.0" />
+         </font>
+      </Text>
+      <Button fx:id="registerMoviesBTM" layoutX="207.0" layoutY="77.0" mnemonicParsing="false" onAction="#registerMovies" style="-fx-background-color: #1169ed;" text="Registrar películas" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="registerUsersBTM" layoutX="35.0" layoutY="77.0" mnemonicParsing="false" onAction="#registerUser" style="-fx-background-color: #1169ed;" text="Registrar usuarios" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="availableMoviesBTM" layoutX="111.0" layoutY="135.0" mnemonicParsing="false" onAction="#availableMovies" style="-fx-background-color: #1169ed;" text="Películas disponibles" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
