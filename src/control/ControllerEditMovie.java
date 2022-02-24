@@ -25,7 +25,6 @@ import model.MovieData;
 public class ControllerEditMovie implements Initializable{
 	
 	String movie;
-	Movie replaceMovie;
 	
 	@FXML
     private Button backBTM;
@@ -71,7 +70,7 @@ public class ControllerEditMovie implements Initializable{
     	
     	String durationMovie = durationFilmTF.getText();
     	
-    	String filmRoom = filmRoomCMB.getAccessibleText();
+    	String filmRoom = filmRoomCMB.getSelectionModel().getSelectedItem();
     	
     	String movieHour = movieTimeTF.getText();
     	
@@ -79,51 +78,77 @@ public class ControllerEditMovie implements Initializable{
     	int year = date.getYear();
     	int month = date.getMonthValue();
     	int day = date.getDayOfMonth();
-    	String dateDMY = "day/month/year";
-    	boolean permission = seachMovieTime(filmRoom, movieHour, dateDMY);
+    	String dateDMY = day+"/"+month+"/"+year;
     	String[] facts = movie.split(" - ");
-    	if(permission == true) {
+    	int permission = seachMovieTime(filmRoom, movieHour, dateDMY);
+    	if(permission == 0) {
     		for(int i=0;i<MovieData.movie.size();i++) {
         		if(MovieData.movie.get(i).getNameFilm().equals(facts[0]) && MovieData.movie.get(i).getDurationFilm().equalsIgnoreCase(facts[1]) && MovieData.movie.get(i).getFilmRoom().equals(facts[2]) && MovieData.movie.get(i).getHourMovie().equals(facts[3]) && MovieData.movie.get(i).getDayMovie().equals(facts[4])) {
-        			replaceMovie = MovieData.movie.get(i);
-        			MovieData.movie.get(i) = replaceMovie;
+        			MovieData.movie.get(i).setNameFilm(nameFilm);
+        			MovieData.movie.get(i).setDurationFilm(durationMovie);
+        			MovieData.movie.get(i).setFilmRoom(filmRoom);
+        			MovieData.movie.get(i).setHourMovie(movieHour);
+        			MovieData.movie.get(i).setDayMovie(dateDMY);
+        			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulEdit.fxml"));
+        			ControllerSuccessfulEdit control = new ControllerSuccessfulEdit();
+        			control.setSuperStage((Stage) editFilmBTM.getScene().getWindow());
+        			loader.setController(control);
+        			Parent parent = (Parent) loader.load();
+        			Stage stage2 = new Stage();
+        			Scene scene = new Scene(parent);
+        			stage2.setScene(scene);
+        			stage2.show();
         		}
     		}	
-    	} else {
-    		// nosepuede
     	}
-    	
-    	
     }
     
-    public boolean seachMovieTime(String room,String hour,String dateDMY) {
-    	boolean confirm = false;
+    public int seachMovieTime(String room,String hour,String dateDMY) throws IOException {
+    	int error = 0;
     	for(int i=0;i<MovieData.movie.size();i++) {
     		if(MovieData.movie.get(i).getFilmRoom().equals(room)) {
 				if (MovieData.movie.get(i).getHourMovie().equalsIgnoreCase(hour)) {
 					if(MovieData.movie.get(i).getDayMovie().equalsIgnoreCase(dateDMY)) {
-						//No se puede añadir. Exception
-					} else {
-						confirm = true;
+						error = 1;
+						//No se puede añadir porque tiene la misma sala, hora y la misma fecha
+						mistakes(error);
+						break;
 					}
-				} else {
-					confirm = true;
 				}
     		} else {
     			if (MovieData.movie.get(i).getHourMovie().equalsIgnoreCase(hour)) {
 					if(MovieData.movie.get(i).getDayMovie().equalsIgnoreCase(dateDMY)) {
-						//No se puede añadir. Exception
-					} else {
-						confirm = true;
+						error = 2;
+						//No se puede añadir porque tiene otra sala pero esta ocupada en esa hora y fecha
+						mistakes(error);
+						break;
 					}
-				} else {
-					confirm = true;
 				}
-    		}
+			}
     	}
-    	return confirm;
+    	return error;
     }
 
+    public void mistakes(int error) throws IOException {
+    	switch(error) {
+    	case 1: FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionSameRoomHourDay"));
+    			loader.setController(new ControllerExceptionSameRoomHourDay());
+    			Parent parent = (Parent) loader.load();
+    			Stage stage = new Stage();
+    			Scene scene = new Scene(parent);
+    			stage.setScene(scene);
+    			stage.show();
+    		break;
+		case 2: FXMLLoader loader2 = new FXMLLoader(Main.class.getResource("../ui/ExceptionSameRoomHourDay"));
+				loader2.setController(new ControllerExceptionSameRoomHourDay());
+				Parent parent2 = (Parent) loader2.load();
+				Stage stage2 = new Stage();
+				Scene scene2 = new Scene(parent2);
+				stage2.setScene(scene2);
+				stage2.show();
+    		break;
+    	}
+    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
