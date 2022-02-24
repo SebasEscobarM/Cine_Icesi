@@ -15,6 +15,9 @@ public class ControllerCinemaMenu {
 	
 	@FXML
 	private Button availableMoviesBTM;
+	
+	@FXML
+    private Button registerEmployeeBTM;
 
 	@FXML
 	private Button registerMoviesBTM;
@@ -23,8 +26,16 @@ public class ControllerCinemaMenu {
 	private Button registerUsersBTM;
 
 	@FXML
-	void availableMovies(ActionEvent event) {
-
+	void availableMovies(ActionEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/MoviesAvailable.fxml"));
+		loader.setController(new ControllerMoviesAvailable());
+		Parent parent = (Parent) loader.load();
+		Stage stage = new Stage();
+		Scene scene = new Scene(parent);
+		stage.setScene(scene);
+		stage.show();
+		Stage stage3 = (Stage) this.registerMoviesBTM.getScene().getWindow();
+        stage3.close();
 	}
 
 	@FXML
@@ -49,8 +60,13 @@ public class ControllerCinemaMenu {
 		Scene scene = new Scene(parent);
 		stage.setScene(scene);
 		stage.show();
-		Stage stage2 = (Stage) this.registerUsersBTM.getScene().getWindow();
-        stage2.close();
+		Stage stage1 = (Stage) this.registerUsersBTM.getScene().getWindow();
+        stage1.close();
 	}
+	
+	@FXML
+    void registerEmployees(ActionEvent event) {
+
+    }
 	
 }

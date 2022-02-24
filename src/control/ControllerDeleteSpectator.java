@@ -1,18 +1,24 @@
 package control;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import main.Main;
+import model.UserData;
 
-public class ControllerDeleteSpectator {
+public class ControllerDeleteSpectator implements Initializable{
 	
 	@FXML
     private Button backBTM;
@@ -41,9 +47,13 @@ public class ControllerDeleteSpectator {
     	
     }
 
-    //Este ComboBox mostrará los usuarios disponibles.
-    @FXML
-    void usersAvailable(ActionEvent event) {
-    	
-    }
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		ObservableList<String> list = FXCollections.observableArrayList();
+		for (int i=0;i<UserData.user.size();i++) {
+			list.add(UserData.user.get(i).getNameUsers()+" - "+UserData.user.get(i).getIdUsers());
+		}
+		spectatorsAvailableCMB.setItems(list);
+	}
+
 }

@@ -3,9 +3,11 @@ package control;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Observable;
 import java.util.ResourceBundle;
 
+import exception.SameMovies;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,6 +22,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Main;
+import model.Movie;
+import model.MovieData;
 
 public class ControllerMovieRegistration implements Initializable {
 	
@@ -45,31 +49,44 @@ public class ControllerMovieRegistration implements Initializable {
     private ComboBox<String> filmRoomCMB;
 
     @FXML
-    void durationFilm(ActionEvent event) {
-    	durationFilmTF.getText();
-    }
-
-    @FXML
-    void movieDay(ActionEvent event) {
+    void registerFilm(ActionEvent event) throws IOException, SameMovies{
+    	String nameFilm = nameFilmTF.getText();
+    	
+    	String durationMovie = durationFilmTF.getText()+"hr";
+    	
+    	String filmRoom = filmRoomCMB.getSelectionModel().getSelectedItem();
+    	
+    	String movieHour = movieTimeTF.getText();
+    	
     	LocalDate date = movieDayDP.getValue();
     	int year = date.getYear();
     	int month = date.getMonthValue();
     	int day = date.getDayOfMonth();
-    }
-
-    @FXML
-    void movieTime(ActionEvent event) {
-    	movieTimeTF.getText();
-    }
-
-    @FXML
-    void registerFilm(ActionEvent event) {
+    	String dateDMY = ""+day+"/"+month+"/"+year;
     	
-    }
-    
-    @FXML
-    void addFilm(ActionEvent event) {
-    	nameFilmTF.getText();
+    	int check = seachMovie(nameFilm, durationMovie, filmRoom, movieHour, dateDMY);
+    	if(check == 1) {
+    		MovieData.movie.add(new Movie(nameFilm,durationMovie,filmRoom,dateDMY,movieHour));
+			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRegistration.fxml"));
+			ControllerSuccessfulRegistration control = new ControllerSuccessfulRegistration();
+			control.setSuperStage((Stage) registerFilmBTM.getScene().getWindow());
+			loader.setController(control);
+			Parent parent = (Parent) loader.load();
+			Stage stage2 = new Stage();
+			Scene scene = new Scene(parent);
+			stage2.setScene(scene);
+			stage2.show();
+    	} else {
+    		//throw new SameMovies();
+    		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionSameMovies.fxml"));
+    		loader.setController(new ControllerExceptionSameMovie());
+    		Parent parent = (Parent) loader.load();
+    		Stage stage = new Stage();
+    		Scene scene = new Scene(parent);
+    		stage.setScene(scene);
+    		stage.show();
+    	}
+    	
     }
     
     @FXML
@@ -92,4 +109,14 @@ public class ControllerMovieRegistration implements Initializable {
 		list.add("Sala Media");
 		filmRoomCMB.setItems(list); 
 	}
+	
+	public int seachMovie(String name,String duration,String room,String hour,String dateDMY) {
+    	int position = 1;
+    	for(int i=0;i<MovieData.movie.size();i++) {
+    		if(MovieData.movie.get(i).getHourMovie().equalsIgnoreCase(hour) && MovieData.movie.get(i).getDayMovie().equalsIgnoreCase(dateDMY)) {
+    			position = -1;
+    		}
+    	}
+    	return position;
+    }
 }

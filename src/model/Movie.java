@@ -8,15 +8,13 @@ public class Movie {
 	private String nameFilm;
 	private String durationFilm;
 	private String filmRoom;
-	private Date dayMovie;
-	private Date hourMovie;
+	private String dayMovie;
+	private String hourMovie;
 	
 	//relations
-	private ArrayList<Chair> chairAvailable;
 	
 	//methods
-	public Movie(String nameFilm, String durationFilm, String filmRoom, Date dayMovie, Date hourMovie) {
-		chairAvailable = new ArrayList<>();
+	public Movie(String nameFilm, String durationFilm, String filmRoom, String dayMovie, String hourMovie) {
 		this.nameFilm = nameFilm;
 		this.durationFilm = durationFilm;
 		this.filmRoom = filmRoom;
@@ -55,19 +53,19 @@ public class Movie {
 		this.filmRoom = filmRoom;
 	}
 
-	public Date getDayMovie() {
+	public String getDayMovie() {
 		return dayMovie;
 	}
 
-	public void setDayMovie(Date dayMovie) {
+	public void setDayMovie(String dayMovie) {
 		this.dayMovie = dayMovie;
 	}
 
-	public Date getHourMovie() {
+	public String getHourMovie() {
 		return hourMovie;
 	}
 
-	public void setHourMovie(Date hourMovie) {
+	public void setHourMovie(String hourMovie) {
 		this.hourMovie = hourMovie;
 	}
 

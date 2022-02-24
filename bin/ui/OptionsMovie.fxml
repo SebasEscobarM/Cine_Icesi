@@ -16,7 +16,7 @@
       </Text>
       <ImageView fitHeight="65.0" fitWidth="43.0" layoutX="255.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/descarga.png" />
+            <Image url="@../../../../../Desktop/descarga.png" />
          </image>
       </ImageView>
       <Button fx:id="newMovieBTM" layoutX="81.0" layoutY="77.0" mnemonicParsing="false" onAction="#addMovie" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #1169ed;" text="Añadir Película" textFill="WHITE">
@@ -33,7 +33,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0">
                <image>
-                  <Image url="@../../../../Desktop/icons8-atrás-64.png" />
+                  <Image url="@../../../../../Desktop/icons8-atrás-64.png" />
                </image>
             </ImageView>
          </graphic>

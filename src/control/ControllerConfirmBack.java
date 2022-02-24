@@ -9,7 +9,6 @@ public class ControllerConfirmBack {
 	
 	Stage superStage;
 	
-	
 	@FXML
     private Button cancelBTM;
 
@@ -32,7 +31,6 @@ public class ControllerConfirmBack {
 
 	public void setSuperStage(Stage window) {
 		this.superStage = window;
-		
 	}
 
 }

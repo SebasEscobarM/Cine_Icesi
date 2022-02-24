@@ -62,8 +62,8 @@ public class ControllerOptionsMovie {
 
     @FXML
     void editMovie(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/EditMovie.fxml"));
-		loader.setController(new ControllerEditMovie());
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SelectMovieToEdit.fxml"));
+		loader.setController(new ControllerSelectMovieToEdit());
 		Parent parent = (Parent) loader.load();
 		Stage stage2 = new Stage();
 		Scene scene = new Scene(parent);

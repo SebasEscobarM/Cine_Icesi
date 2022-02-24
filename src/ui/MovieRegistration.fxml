@@ -12,19 +12,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="nameFilmTF" layoutX="39.0" layoutY="120.0" onAction="#addFilm" prefHeight="25.0" prefWidth="209.0" />
+      <TextField fx:id="nameFilmTF" layoutX="39.0" layoutY="120.0" prefHeight="25.0" prefWidth="209.0" />
       <Text layoutX="39.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre del filme." wrappingWidth="118.357421875">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <DatePicker fx:id="movieDayDP" layoutX="342.0" layoutY="121.0" onAction="#movieDay" />
+      <DatePicker fx:id="movieDayDP" layoutX="342.0" layoutY="121.0" />
       <Text layoutX="39.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duración del filme." wrappingWidth="118.357421875">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="durationFilmTF" layoutX="39.0" layoutY="181.0" onAction="#durationFilm" prefHeight="25.0" prefWidth="209.0" />
+      <TextField fx:id="durationFilmTF" layoutX="39.0" layoutY="181.0" prefHeight="25.0" prefWidth="209.0" />
       <Text layoutX="39.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sala del filme." wrappingWidth="118.357421875">
          <font>
             <Font size="14.0" />
@@ -37,7 +37,7 @@
       </Text>
       <ImageView fitHeight="45.0" fitWidth="189.0" layoutX="34.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/logo_icesi.png" />
+            <Image url="@../../../../../Desktop/logo_icesi.png" />
          </image>
       </ImageView>
       <Text layoutX="39.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora del filme." wrappingWidth="118.357421875">
@@ -45,7 +45,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="movieTimeTF" layoutX="39.0" layoutY="299.0" onAction="#movieTime" prefHeight="25.0" prefWidth="209.0" />
+      <TextField fx:id="movieTimeTF" layoutX="39.0" layoutY="299.0" prefHeight="25.0" prefWidth="209.0" />
       <Button fx:id="registerFilmBTM" alignment="CENTER" layoutX="419.0" layoutY="386.0" mnemonicParsing="false" onAction="#registerFilm" style="-fx-background-color: #1169ed;" text="Registrar" textFill="WHITE">
          <font>
             <Font size="14.0" />
@@ -55,7 +55,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0">
                <image>
-                  <Image url="@../../../../Desktop/icons8-atrás-64.png" />
+                  <Image url="@../../../../../Desktop/icons8-atrás-64.png" />
                </image>
             </ImageView>
          </graphic>

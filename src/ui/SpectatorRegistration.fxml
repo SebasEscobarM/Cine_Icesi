@@ -11,42 +11,42 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="359.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="92.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de usuarios">
+      <Text layoutX="88.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de usuarios">
          <font>
             <Font name="Bodoni Bk BT Book" size="26.0" />
          </font>
       </Text>
-      <Text layoutX="88.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre del usuario.">
+      <Text layoutX="26.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre del usuario.">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="nameUserTF" layoutX="88.0" layoutY="110.0" onAction="#nameUser" prefHeight="25.0" prefWidth="183.0" />
-      <Text layoutX="88.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cédula del usuario.">
+      <TextField fx:id="nameUserTF" layoutX="26.0" layoutY="105.0" prefHeight="25.0" prefWidth="301.0" />
+      <Text layoutX="25.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cédula del usuario.">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="idUserTF" layoutX="88.0" layoutY="177.0" onAction="#idUser" prefHeight="25.0" prefWidth="183.0" />
-      <Text layoutX="88.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Película seleccionada.">
+      <TextField fx:id="idUserTF" layoutX="26.0" layoutY="178.0" prefHeight="25.0" prefWidth="301.0" />
+      <Text layoutX="26.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Película seleccionada.">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Button fx:id="addUserBTM" layoutX="150.0" layoutY="294.0" mnemonicParsing="false" onAction="#addUser" style="-fx-background-color: #1169ed;" text="Añadir" textFill="WHITE">
+      <Button fx:id="addUserBTM" layoutX="148.0" layoutY="298.0" mnemonicParsing="false" onAction="#addUser" style="-fx-background-color: #1169ed;" text="Añadir" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="backBTM" alignment="CENTER" layoutX="27.0" layoutY="26.0" mnemonicParsing="false" onAction="#backAct" prefHeight="25.0" prefWidth="19.0" style="-fx-background-radius: 100;">
+      <Button fx:id="backBTM" alignment="CENTER" layoutX="26.0" layoutY="22.0" mnemonicParsing="false" onAction="#backAct" prefHeight="25.0" prefWidth="19.0" style="-fx-background-radius: 100;">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0">
                <image>
-                  <Image url="@../../../../Desktop/icons8-atrás-64.png" />
+                  <Image url="@../../../../../Desktop/icons8-atrás-64.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <ComboBox fx:id="selectedMovieCMB" layoutX="88.0" layoutY="245.0" prefHeight="25.0" prefWidth="183.0" />
+      <ComboBox fx:id="selectedMovieCMB" layoutX="26.0" layoutY="246.0" prefHeight="25.0" prefWidth="301.0" />
    </children>
 </AnchorPane>

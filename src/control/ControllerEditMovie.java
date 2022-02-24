@@ -19,8 +19,13 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Main;
+import model.Movie;
+import model.MovieData;
 
 public class ControllerEditMovie implements Initializable{
+	
+	String movie;
+	Movie replaceMovie;
 	
 	@FXML
     private Button backBTM;
@@ -42,10 +47,9 @@ public class ControllerEditMovie implements Initializable{
 
     @FXML
     private TextField nameFilmTF;
-
-    @FXML
-    void addFilm(ActionEvent event) {
-    	nameFilmTF.getText();
+    
+    public ControllerEditMovie(String movie) {
+    	this.movie = movie;
     }
 
     @FXML
@@ -62,27 +66,64 @@ public class ControllerEditMovie implements Initializable{
     }
 
     @FXML
-    void durationFilm(ActionEvent event) {
-    	durationFilmTF.getText();
-    }
-
-    @FXML
-    void editFilm(ActionEvent event) {
-
-    }
-
-    @FXML
-    void movieDay(ActionEvent event) {
+    void editFilm(ActionEvent event) throws IOException {
+    	String nameFilm = nameFilmTF.getText();
+    	
+    	String durationMovie = durationFilmTF.getText();
+    	
+    	String filmRoom = filmRoomCMB.getAccessibleText();
+    	
+    	String movieHour = movieTimeTF.getText();
+    	
     	LocalDate date = movieDayDP.getValue();
     	int year = date.getYear();
     	int month = date.getMonthValue();
     	int day = date.getDayOfMonth();
+    	String dateDMY = "day/month/year";
+    	boolean permission = seachMovieTime(filmRoom, movieHour, dateDMY);
+    	String[] facts = movie.split(" - ");
+    	if(permission == true) {
+    		for(int i=0;i<MovieData.movie.size();i++) {
+        		if(MovieData.movie.get(i).getNameFilm().equals(facts[0]) && MovieData.movie.get(i).getDurationFilm().equalsIgnoreCase(facts[1]) && MovieData.movie.get(i).getFilmRoom().equals(facts[2]) && MovieData.movie.get(i).getHourMovie().equals(facts[3]) && MovieData.movie.get(i).getDayMovie().equals(facts[4])) {
+        			replaceMovie = MovieData.movie.get(i);
+        			MovieData.movie.get(i) = replaceMovie;
+        		}
+    		}	
+    	} else {
+    		// nosepuede
+    	}
+    	
+    	
+    }
+    
+    public boolean seachMovieTime(String room,String hour,String dateDMY) {
+    	boolean confirm = false;
+    	for(int i=0;i<MovieData.movie.size();i++) {
+    		if(MovieData.movie.get(i).getFilmRoom().equals(room)) {
+				if (MovieData.movie.get(i).getHourMovie().equalsIgnoreCase(hour)) {
+					if(MovieData.movie.get(i).getDayMovie().equalsIgnoreCase(dateDMY)) {
+						//No se puede añadir. Exception
+					} else {
+						confirm = true;
+					}
+				} else {
+					confirm = true;
+				}
+    		} else {
+    			if (MovieData.movie.get(i).getHourMovie().equalsIgnoreCase(hour)) {
+					if(MovieData.movie.get(i).getDayMovie().equalsIgnoreCase(dateDMY)) {
+						//No se puede añadir. Exception
+					} else {
+						confirm = true;
+					}
+				} else {
+					confirm = true;
+				}
+    		}
+    	}
+    	return confirm;
     }
 
-    @FXML
-    void movieTime(ActionEvent event) {
-    	movieTimeTF.getText();
-    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

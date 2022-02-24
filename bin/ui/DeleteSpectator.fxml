@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="205.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text layoutX="74.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eliminar Usuario.">
@@ -21,7 +20,7 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <ComboBox fx:id="spectatorsAvailableCMB" layoutX="48.0" layoutY="105.0" onAction="#usersAvailable" prefHeight="25.0" prefWidth="232.0" />
+      <ComboBox fx:id="spectatorsAvailableCMB" layoutX="48.0" layoutY="105.0" prefHeight="25.0" prefWidth="232.0" />
       <Button fx:id="deleteSpectatorBTM" layoutX="127.0" layoutY="149.0" mnemonicParsing="false" onAction="#deleteUsers" style="-fx-background-color: #e80202;" text="Eliminar" textFill="WHITE">
          <font>
             <Font size="14.0" />
@@ -31,7 +30,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="23.0">
                <image>
-                  <Image url="@../../../../Desktop/icons8-atrás-64.png" />
+                  <Image url="@../../../../../Desktop/icons8-atrás-64.png" />
                </image>
             </ImageView>
          </graphic>

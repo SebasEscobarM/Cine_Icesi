@@ -10,18 +10,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="203.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="76.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrar la función.">
+      <Text layoutX="65.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione la función.">
          <font>
-            <Font name="Bodoni Bk BT Book" size="28.0" />
+            <Font name="Bodoni Bk BT Book" size="26.0" />
          </font>
       </Text>
-      <Text layoutX="28.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Funciones disponibles.">
+      <Text layoutX="29.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Funciones disponibles.">
          <font>
-            <Font size="16.0" />
+            <Font size="15.0" />
          </font>
       </Text>
-      <ComboBox fx:id="functionsAvailableCMB" layoutX="28.0" layoutY="106.0" prefHeight="25.0" prefWidth="287.0" />
-      <Button fx:id="eliminateMovieBTM" layoutX="134.0" layoutY="148.0" mnemonicParsing="false" onAction="#deleteMovie" style="-fx-background-color: #e80202;" text="Eliminar" textFill="WHITE">
+      <ComboBox fx:id="functionsAvailableCMB" layoutX="29.0" layoutY="102.0" prefHeight="25.0" prefWidth="283.0" />
+      <Button fx:id="selectMovieBTM" layoutX="138.0" layoutY="147.0" mnemonicParsing="false" onAction="#selectedMovie" style="-fx-background-color: #1169ed;" text="Buscar" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
