@@ -22,12 +22,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="availableMoviesBTM" layoutX="216.0" layoutY="134.0" mnemonicParsing="false" onAction="#availableMovies" style="-fx-background-color: #1169ed;" text="Películas disponibles" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="registerEmployeeBTM" layoutX="20.0" layoutY="134.0" mnemonicParsing="false" onAction="#registerEmployees" prefHeight="31.0" prefWidth="156.0" style="-fx-background-color: #1169ed;" text="Registrar empleados" textFill="WHITE">
+      <Button fx:id="availableMoviesBTM" layoutX="118.0" layoutY="137.0" mnemonicParsing="false" onAction="#availableMovies" style="-fx-background-color: #1169ed;" text="Películas disponibles" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

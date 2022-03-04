@@ -17,9 +17,6 @@ public class ControllerOptionsMovie {
     private Button backBTM;
 
     @FXML
-    private Button modifyMovieBTM1;
-
-    @FXML
     private Button newMovieBTM;
 
     @FXML
@@ -53,17 +50,6 @@ public class ControllerOptionsMovie {
     void deleteMovie(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/DeleteMovie.fxml"));
 		loader.setController(new ControllerDeleteMovie());
-		Parent parent = (Parent) loader.load();
-		Stage stage2 = new Stage();
-		Scene scene = new Scene(parent);
-		stage2.setScene(scene);
-		stage2.show();
-    }
-
-    @FXML
-    void editMovie(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SelectMovieToEdit.fxml"));
-		loader.setController(new ControllerSelectMovieToEdit());
 		Parent parent = (Parent) loader.load();
 		Stage stage2 = new Stage();
 		Scene scene = new Scene(parent);

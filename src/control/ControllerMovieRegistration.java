@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.Observable;
 import java.util.ResourceBundle;
 
-import exception.SameMovies;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -49,7 +48,7 @@ public class ControllerMovieRegistration implements Initializable {
     private ComboBox<String> filmRoomCMB;
 
     @FXML
-    void registerFilm(ActionEvent event) throws IOException, SameMovies{
+    void registerFilm(ActionEvent event) throws IOException{
     	String nameFilm = nameFilmTF.getText();
     	
     	String durationMovie = durationFilmTF.getText()+"hr";
@@ -63,6 +62,7 @@ public class ControllerMovieRegistration implements Initializable {
     	int month = date.getMonthValue();
     	int day = date.getDayOfMonth();
     	String dateDMY = ""+day+"/"+month+"/"+year;
+    	
     	
     	int check = seachMovie(nameFilm, durationMovie, filmRoom, movieHour, dateDMY);
     	if(check == 1) {

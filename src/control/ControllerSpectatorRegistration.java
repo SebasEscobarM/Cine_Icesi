@@ -42,9 +42,21 @@ public class ControllerSpectatorRegistration implements Initializable{
     void addUser(ActionEvent event) throws IOException {
     	String nameUser = nameUserTF.getText();
     	String idUser = idUserTF.getText();
+    	String movie = selectedMovieCMB.getSelectionModel().getSelectedItem();
+    	String[] infoMovie = movie.split(" - ");
     	int check = searchUser(nameUser, idUser);
     	if(check == 1) {
     		UserData.user.add(new User(nameUser,idUser));
+    		
+    		if (infoMovie[2].equalsIgnoreCase("Sala Media")) {
+    			
+    		} else if (infoMovie[2].equalsIgnoreCase("MiniSala")) {
+    			
+    		}
+    		
+    		
+    		
+    		
     		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRegistration.fxml"));
 			ControllerSuccessfulRegistration control = new ControllerSuccessfulRegistration();
 			control.setSuperStage((Stage) addUserBTM.getScene().getWindow());

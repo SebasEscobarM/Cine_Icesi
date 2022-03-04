@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="idTF" layoutX="31.0" layoutY="48.0" onAction="#checkID" prefHeight="26.0" prefWidth="241.0" />
+      <TextField fx:id="idTF" layoutX="31.0" layoutY="48.0" prefHeight="26.0" prefWidth="241.0" />
       <Text layoutX="31.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese su cédula" wrappingWidth="113.009765625">
          <font>
             <Font size="14.0" />

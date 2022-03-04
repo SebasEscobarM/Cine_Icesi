@@ -15,9 +15,6 @@ public class ControllerCinemaMenu {
 	
 	@FXML
 	private Button availableMoviesBTM;
-	
-	@FXML
-    private Button registerEmployeeBTM;
 
 	@FXML
 	private Button registerMoviesBTM;
@@ -63,10 +60,5 @@ public class ControllerCinemaMenu {
 		Stage stage1 = (Stage) this.registerUsersBTM.getScene().getWindow();
         stage1.close();
 	}
-	
-	@FXML
-    void registerEmployees(ActionEvent event) {
-
-    }
 	
 }

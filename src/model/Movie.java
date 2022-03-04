@@ -3,6 +3,9 @@ package model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Movie {
 	//attributes
 	private String nameFilm;
@@ -12,6 +15,8 @@ public class Movie {
 	private String hourMovie;
 	
 	//relations
+	private ObservableList<Chair> chairSalaMedia;
+	private ObservableList<Chair> chairMiniRoom;
 	
 	//methods
 	public Movie(String nameFilm, String durationFilm, String filmRoom, String dayMovie, String hourMovie) {
@@ -20,6 +25,11 @@ public class Movie {
 		this.filmRoom = filmRoom;
 		this.dayMovie = dayMovie;
 		this.hourMovie = hourMovie;
+		if(filmRoom.equalsIgnoreCase("Sala Media")) {
+			chairSalaMedia = FXCollections.observableArrayList();
+		} else if (filmRoom.equalsIgnoreCase("MiniSala")) {
+			chairMiniRoom = FXCollections.observableArrayList();
+		}
 	}
 	
 	public boolean searchChair(String nameFilm,String filmRoom,Date dateMovie,Date hourMovie) {
