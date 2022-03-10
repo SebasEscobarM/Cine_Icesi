@@ -7,6 +7,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Movie {
+	//Constants
+	public static final int MINI_ROOM_CHAIRS=28;
+	public static final int MID_ROOM_CHAIRS=42;
 	//attributes
 	private String nameFilm;
 	private String durationFilm;
@@ -15,8 +18,7 @@ public class Movie {
 	private String hourMovie;
 	
 	//relations
-	private ObservableList<Chair> chairSalaMedia;
-	private ObservableList<Chair> chairMiniRoom;
+	private ArrayList<User> chairsRoomData; 
 	
 	//methods
 	public Movie(String nameFilm, String durationFilm, String filmRoom, String dayMovie, String hourMovie) {
@@ -26,18 +28,18 @@ public class Movie {
 		this.dayMovie = dayMovie;
 		this.hourMovie = hourMovie;
 		if(filmRoom.equalsIgnoreCase("Sala Media")) {
-			chairSalaMedia = FXCollections.observableArrayList();
+			chairsRoomData=new ArrayList<>(MID_ROOM_CHAIRS);
 		} else if (filmRoom.equalsIgnoreCase("MiniSala")) {
-			chairMiniRoom = FXCollections.observableArrayList();
+			chairsRoomData=new ArrayList<>(MINI_ROOM_CHAIRS);
 		}
 	}
 	
-	public boolean searchChair(String nameFilm,String filmRoom,Date dateMovie,Date hourMovie) {
-		boolean freeChair = false;
-		
-		return freeChair;
+	public ArrayList<User> getChairs(){
+		return chairsRoomData;
 	}
-	
+	public void addUserToAChair(User user) {
+		
+	}
 	
 	public String getNameFilm() {
 		return nameFilm;

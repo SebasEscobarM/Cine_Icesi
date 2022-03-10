@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import main.Main;
+import model.Movie;
 import model.MovieData;
 
 public class ControllerDeleteMovie implements Initializable{
@@ -46,19 +47,20 @@ public class ControllerDeleteMovie implements Initializable{
     void deleteMovie(ActionEvent event) throws IOException {
     	String movieFacts = functionsAvailableCMB.getSelectionModel().getSelectedItem();
     	String[] facts = movieFacts.split(" - ");
-    	for(int i=0;i<MovieData.movie.size();i++) {
-    		if(MovieData.movie.get(i).getNameFilm().equals(facts[0]) && MovieData.movie.get(i).getDurationFilm().equalsIgnoreCase(facts[1]) && MovieData.movie.get(i).getFilmRoom().equals(facts[2]) && MovieData.movie.get(i).getHourMovie().equals(facts[3]) && MovieData.movie.get(i).getDayMovie().equals(facts[4])) {
-    			MovieData.movie.remove(i);
-    			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRemoval.fxml"));
-    			ControllerSuccessfulRemoval control = new ControllerSuccessfulRemoval();
-    			control.setSuperStage((Stage) eliminateMovieBTM.getScene().getWindow());
-    			loader.setController(control);
-    			Parent parent = (Parent) loader.load();
-    			Stage stage2 = new Stage();
-    			Scene scene = new Scene(parent);
-    			stage2.setScene(scene);
-    			stage2.show();
-    		}
+    	Movie mvToDelete=MovieData.getMovie(facts[0], facts[1], facts[2], facts[3], facts[4]);
+    	if(mvToDelete!=null) {
+    		
+    		MovieData.deleteMovie(mvToDelete);
+    		
+    		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRemoval.fxml"));
+			ControllerSuccessfulRemoval control = new ControllerSuccessfulRemoval();
+			control.setSuperStage((Stage) eliminateMovieBTM.getScene().getWindow());
+			loader.setController(control);
+			Parent parent = (Parent) loader.load();
+			Stage stage2 = new Stage();
+			Scene scene = new Scene(parent);
+			stage2.setScene(scene);
+			stage2.show();
     	}
     }
 

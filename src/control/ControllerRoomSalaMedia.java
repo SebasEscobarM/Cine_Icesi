@@ -1,15 +1,19 @@
 package control;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import model.Chair;
 import model.Movie;
+import model.User;
 
 public class ControllerRoomSalaMedia implements Initializable{
 	
@@ -148,27 +152,43 @@ public class ControllerRoomSalaMedia implements Initializable{
     @FXML
     private Button selectChairBTN;
     
+    Movie mvEdit;
+    
+    User nwUser;
+    
     int cant_button = 42;
+    
+    public ControllerRoomSalaMedia(Movie mv, User u) {
+    	mvEdit=mv;
+    	nwUser=u;
+    }
 
     @FXML
+    void preSelectChair(ActionEvent event) {
+    	//Cambiar a un color cuando le da click a una silla libre, solo una a la vez
+    }
+    
+    @FXML
     void backAct(ActionEvent event) {
-
+    	
     }
 
     @FXML
     void confirmChair(ActionEvent event) {
-
+    	//Guardar el usuario en la silla preseleccionada al momento de confirmar
     }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
-	}
-	
-	public void addChair() {
-		Chair chairRoom = null;
-		for(int i=0;i<cant_button;i++) {
-			
+		//Inicializar con colores los botones
+		ObservableList<Node> btns=roomSalaMediaChair.getChildren();
+		for(int i=0;i<mvEdit.getChairs().size();i++) {
+			if(btns.get(i) instanceof Button) {
+				if(mvEdit.getChairs().get(i)==null) {
+					btns.get(i);
+					//Cambiar colooor
+				}
+			}
 		}
 	}
 	

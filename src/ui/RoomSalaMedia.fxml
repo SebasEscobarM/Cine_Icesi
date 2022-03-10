@@ -12,8 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="413.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="413.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane fx:id="roomSalaMediaChair" alignment="CENTER" layoutX="28.0" layoutY="138.0" prefHeight="204.0" prefWidth="421.0">
         <columnConstraints>
@@ -34,47 +33,47 @@
             <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="chair1" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;">
+            <Button fx:id="chair1" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair2" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1">
+            <Button fx:id="chair2" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair8" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="1">
+            <Button fx:id="chair8" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair9" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="chair9" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair15" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="2">
+            <Button fx:id="chair15" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair16" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="chair16" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair22" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="3">
+            <Button fx:id="chair22" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair23" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="chair23" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair29" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="4">
+            <Button fx:id="chair29" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
@@ -84,162 +83,162 @@
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair36" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="5">
+            <Button fx:id="chair36" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair37" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Button fx:id="chair37" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair3" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2">
+            <Button fx:id="chair3" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair4" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3">
+            <Button fx:id="chair4" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair10" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="chair10" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair11" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button fx:id="chair11" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair17" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button fx:id="chair17" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair18" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button fx:id="chair18" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair24" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Button fx:id="chair24" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair25" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button fx:id="chair25" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair31" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Button fx:id="chair31" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair38" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+            <Button fx:id="chair38" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair32" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Button fx:id="chair32" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair39" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="5">
+            <Button fx:id="chair39" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair5" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4">
+            <Button fx:id="chair5" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair12" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <Button fx:id="chair12" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair19" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <Button fx:id="chair19" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair26" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+            <Button fx:id="chair26" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair33" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <Button fx:id="chair33" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair40" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="5">
+            <Button fx:id="chair40" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair6" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5">
+            <Button fx:id="chair6" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair7" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6">
+            <Button fx:id="chair7" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair13" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <Button fx:id="chair13" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair14" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="1">
+            <Button fx:id="chair14" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair20" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="2">
+            <Button fx:id="chair20" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair21" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="2">
+            <Button fx:id="chair21" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair27" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="3">
+            <Button fx:id="chair27" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair28" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="3">
+            <Button fx:id="chair28" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair34" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="4">
+            <Button fx:id="chair34" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair35" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="4">
+            <Button fx:id="chair35" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair41" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="5">
+            <Button fx:id="chair41" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair42" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="5">
+            <Button fx:id="chair42" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>

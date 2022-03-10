@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Date;
-import java.util.Observable;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -51,6 +50,7 @@ public class ControllerMovieRegistration implements Initializable {
     void registerFilm(ActionEvent event) throws IOException{
     	String nameFilm = nameFilmTF.getText();
     	
+    	//Minutos.. cambiar
     	String durationMovie = durationFilmTF.getText()+"hr";
     	
     	String filmRoom = filmRoomCMB.getSelectionModel().getSelectedItem();
@@ -64,9 +64,8 @@ public class ControllerMovieRegistration implements Initializable {
     	String dateDMY = ""+day+"/"+month+"/"+year;
     	
     	
-    	int check = seachMovie(nameFilm, durationMovie, filmRoom, movieHour, dateDMY);
-    	if(check == 1) {
-    		MovieData.movie.add(new Movie(nameFilm,durationMovie,filmRoom,dateDMY,movieHour));
+    	if(MovieData.getMovie(nameFilm,durationMovie,filmRoom, movieHour, dateDMY)==null) {
+    		MovieData.addMovie(new Movie(nameFilm,durationMovie,filmRoom,dateDMY,movieHour));
 			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRegistration.fxml"));
 			ControllerSuccessfulRegistration control = new ControllerSuccessfulRegistration();
 			control.setSuperStage((Stage) registerFilmBTM.getScene().getWindow());
@@ -107,16 +106,7 @@ public class ControllerMovieRegistration implements Initializable {
 		ObservableList<String> list = FXCollections.observableArrayList();
 		list.add("MiniSala");
 		list.add("Sala Media");
-		filmRoomCMB.setItems(list); 
+		filmRoomCMB.setItems(list);
 	}
 	
-	public int seachMovie(String name,String duration,String room,String hour,String dateDMY) {
-    	int position = 1;
-    	for(int i=0;i<MovieData.movie.size();i++) {
-    		if(MovieData.movie.get(i).getHourMovie().equalsIgnoreCase(hour) && MovieData.movie.get(i).getDayMovie().equalsIgnoreCase(dateDMY)) {
-    			position = -1;
-    		}
-    	}
-    	return position;
-    }
 }

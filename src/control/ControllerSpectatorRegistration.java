@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.omg.CORBA.portable.CustomValue;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +19,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Main;
+import model.Movie;
 import model.MovieData;
 import model.User;
 import model.UserData;
@@ -40,24 +43,40 @@ public class ControllerSpectatorRegistration implements Initializable{
 
     @FXML
     void addUser(ActionEvent event) throws IOException {
+    	
     	String nameUser = nameUserTF.getText();
     	String idUser = idUserTF.getText();
     	String movie = selectedMovieCMB.getSelectionModel().getSelectedItem();
     	String[] infoMovie = movie.split(" - ");
-    	int check = searchUser(nameUser, idUser);
-    	if(check == 1) {
-    		UserData.user.add(new User(nameUser,idUser));
+    	User nwUser=new User(nameUser, idUser);
+    	Movie movieEdit=MovieData.getMovie(infoMovie[0],infoMovie[1],infoMovie[2], infoMovie[3], infoMovie[4]);
+    	//int check = searchUser(nameUser, idUser);
+    	
+    	if(!(movieEdit.getChairs().contains(nwUser))) {
+    		//Agregar usuario
     		
     		if (infoMovie[2].equalsIgnoreCase("Sala Media")) {
-    			
+    			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomSalaMedia.fxml"));
+        		loader.setController(new ControllerRoomSalaMedia(movieEdit, nwUser));
+        		Parent parent = (Parent) loader.load();
+        		Stage stage = new Stage();
+        		Scene scene = new Scene(parent);
+        		stage.setScene(scene);
+        		stage.show();
+        		
     		} else if (infoMovie[2].equalsIgnoreCase("MiniSala")) {
-    			
+    			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomMiniSala.fxml"));
+        		//Cambiar nombre de controlador
+    			loader.setController(new ControllerRoomSalaMedia(movieEdit, nwUser));
+        		Parent parent = (Parent) loader.load();
+        		Stage stage = new Stage();
+        		Scene scene = new Scene(parent);
+        		stage.setScene(scene);
+        		stage.show();
     		}
     		
     		
-    		
-    		
-    		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRegistration.fxml"));
+    		/*FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRegistration.fxml"));
 			ControllerSuccessfulRegistration control = new ControllerSuccessfulRegistration();
 			control.setSuperStage((Stage) addUserBTM.getScene().getWindow());
 			loader.setController(control);
@@ -65,7 +84,8 @@ public class ControllerSpectatorRegistration implements Initializable{
 			Stage stage2 = new Stage();
 			Scene scene = new Scene(parent);
 			stage2.setScene(scene);
-			stage2.show();
+			stage2.show();*/
+    		
     	} else {
     		//throw new SameIdUser();
     		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionSameIdUser.fxml"));

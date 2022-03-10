@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="413.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane fx:id="roomSalaMediaChair" alignment="CENTER" layoutX="28.0" layoutY="138.0" prefHeight="204.0" prefWidth="421.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="34.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="34.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="34.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="298.0" minWidth="10.0" prefWidth="34.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="34.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="34.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="34.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="chair1" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair2" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair8" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair9" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair15" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair16" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair22" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair23" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair3" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair4" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair10" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair11" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair17" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair18" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair24" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair25" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair5" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair12" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair19" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair26" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair6" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair7" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair13" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair14" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair20" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair21" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair27" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="chair28" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="16.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+      <Line endX="158.0" layoutX="278.0" layoutY="67.0" scaleY="3.0" startX="-238.0" />
+      <Text layoutX="206.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantalla">
+         <font>
+            <Font name="Bodoni MT" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="selectChairBTN" alignment="CENTER" layoutX="361.0" layoutY="365.0" mnemonicParsing="false" onAction="#confirmChair" style="-fx-background-color: #1169ed;" text="Seleccionar" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="backBTM" alignment="CENTER" layoutX="28.0" layoutY="14.0" mnemonicParsing="false" onAction="#backAct" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100; visibility: 0;">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="23.0">
+               <image>
+                  <Image url="@../../../../../Desktop/icons8-atrás-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="178.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mini Sala">
+         <font>
+            <Font name="Bodoni Bk BT Book" size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="24.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" />
+      <Text layoutX="23.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B" />
+      <Text layoutX="23.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C" />
+      <Text layoutX="23.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D" />
+      <Text layoutX="54.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+      <Text layoutX="116.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="5.859375" />
+      <Text layoutX="175.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" />
+      <Text layoutX="235.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" />
+      <Text layoutX="295.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" />
+      <Text layoutX="354.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" />
+      <Text layoutX="415.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7" />
+   </children>
+</AnchorPane>
