@@ -78,7 +78,7 @@
                   <Insets left="16.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="chair30" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button fx:id="chair30" alignment="CENTER" mnemonicParsing="false" onAction="#preSelectChair" prefHeight="27.0" prefWidth="27.0" style="-fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="16.0" />
                </GridPane.margin>

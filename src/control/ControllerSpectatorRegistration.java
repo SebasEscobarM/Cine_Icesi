@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import org.omg.CORBA.portable.CustomValue;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,9 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Main;
 import model.Movie;
-import model.MovieData;
 import model.User;
-import model.UserData;
 
 public class ControllerSpectatorRegistration implements Initializable{
 	
@@ -49,12 +45,9 @@ public class ControllerSpectatorRegistration implements Initializable{
     	String movie = selectedMovieCMB.getSelectionModel().getSelectedItem();
     	String[] infoMovie = movie.split(" - ");
     	User nwUser=new User(nameUser, idUser);
-    	Movie movieEdit=MovieData.getMovie(infoMovie[0],infoMovie[1],infoMovie[2], infoMovie[3], infoMovie[4]);
-    	//int check = searchUser(nameUser, idUser);
-    	
-    	if(!(movieEdit.getChairs().contains(nwUser))) {
-    		//Agregar usuario
-    		
+    	Movie movieEdit=Main.mvsData.getMovie(infoMovie[0],infoMovie[1],infoMovie[2], infoMovie[3], infoMovie[4]);
+
+    	if(!(movieEdit.sameId(nwUser))) {
     		if (infoMovie[2].equalsIgnoreCase("Sala Media")) {
     			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomSalaMedia.fxml"));
         		loader.setController(new ControllerRoomSalaMedia(movieEdit, nwUser));
@@ -66,8 +59,7 @@ public class ControllerSpectatorRegistration implements Initializable{
         		
     		} else if (infoMovie[2].equalsIgnoreCase("MiniSala")) {
     			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomMiniSala.fxml"));
-        		//Cambiar nombre de controlador
-    			loader.setController(new ControllerRoomSalaMedia(movieEdit, nwUser));
+    			loader.setController(new ControllerRoomMiniSala(movieEdit, nwUser));
         		Parent parent = (Parent) loader.load();
         		Stage stage = new Stage();
         		Scene scene = new Scene(parent);
@@ -75,19 +67,7 @@ public class ControllerSpectatorRegistration implements Initializable{
         		stage.show();
     		}
     		
-    		
-    		/*FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRegistration.fxml"));
-			ControllerSuccessfulRegistration control = new ControllerSuccessfulRegistration();
-			control.setSuperStage((Stage) addUserBTM.getScene().getWindow());
-			loader.setController(control);
-			Parent parent = (Parent) loader.load();
-			Stage stage2 = new Stage();
-			Scene scene = new Scene(parent);
-			stage2.setScene(scene);
-			stage2.show();*/
-    		
     	} else {
-    		//throw new SameIdUser();
     		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionSameIdUser.fxml"));
     		loader.setController(new ControllerExceptionSameIdUser());
     		Parent parent = (Parent) loader.load();
@@ -110,22 +90,12 @@ public class ControllerSpectatorRegistration implements Initializable{
 		stage.setScene(scene);
 		stage.show();
     }
-    
-    public int searchUser(String name,String id) {
-    	int position = 1;
-    	for(int i=0;i<UserData.user.size();i++) {
-    		if(UserData.user.get(i).getIdUsers().equalsIgnoreCase(id)) {
-    			position = -1;
-    		}
-    	}
-    	return position;
-    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		ObservableList<String> list = FXCollections.observableArrayList();
-    	for(int i=0;i<MovieData.movie.size();i++) {
-    		list.add(MovieData.movie.get(i).getNameFilm()+" - "+MovieData.movie.get(i).getDurationFilm()+" - "+MovieData.movie.get(i).getFilmRoom()+" - "+MovieData.movie.get(i).getHourMovie()+" - "+MovieData.movie.get(i).getDayMovie());
+    	for(int i=0;i<Main.mvsData.movies.size();i++) {
+    		list.add(Main.mvsData.movies.get(i).getNameFilm()+" - "+Main.mvsData.movies.get(i).getDurationFilm()+" - "+Main.mvsData.movies.get(i).getFilmRoom()+" - "+Main.mvsData.movies.get(i).getHourMovie()+" - "+Main.mvsData.movies.get(i).getDayMovie());
     	}
     	selectedMovieCMB.setItems(list);
 	}

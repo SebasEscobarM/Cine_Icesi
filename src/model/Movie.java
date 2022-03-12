@@ -1,10 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Date;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class Movie {
 	//Constants
@@ -27,18 +23,36 @@ public class Movie {
 		this.filmRoom = filmRoom;
 		this.dayMovie = dayMovie;
 		this.hourMovie = hourMovie;
-		if(filmRoom.equalsIgnoreCase("Sala Media")) {
-			chairsRoomData=new ArrayList<>(MID_ROOM_CHAIRS);
+		chairsRoomData=new ArrayList<>();
+		if(filmRoom.equalsIgnoreCase("Sala Media")) {		
+			setArrSize(MID_ROOM_CHAIRS);
+			System.out.println(chairsRoomData.size());
 		} else if (filmRoom.equalsIgnoreCase("MiniSala")) {
-			chairsRoomData=new ArrayList<>(MINI_ROOM_CHAIRS);
+			setArrSize(MINI_ROOM_CHAIRS);
+			System.out.println(chairsRoomData.size());
 		}
 	}
 	
+	public boolean sameId(User us) {
+		boolean ans=false;
+		for(int i=0;i<chairsRoomData.size();i++) {
+			if(chairsRoomData.get(i)!=null && us.getIdUsers().equalsIgnoreCase(chairsRoomData.get(i).getIdUsers())) {
+				ans=true;
+				break;
+			}
+		}
+		return ans;
+	}
+	public void setArrSize(int n) {
+		for(int i=0;i<n;i++) {
+			chairsRoomData.add(null);
+		}
+	}
 	public ArrayList<User> getChairs(){
 		return chairsRoomData;
 	}
-	public void addUserToAChair(User user) {
-		
+	public void addUserToAChair(User user, int pos) {
+		chairsRoomData.set(pos,user);
 	}
 	
 	public String getNameFilm() {

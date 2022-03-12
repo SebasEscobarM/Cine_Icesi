@@ -47,10 +47,10 @@ public class ControllerDeleteMovie implements Initializable{
     void deleteMovie(ActionEvent event) throws IOException {
     	String movieFacts = functionsAvailableCMB.getSelectionModel().getSelectedItem();
     	String[] facts = movieFacts.split(" - ");
-    	Movie mvToDelete=MovieData.getMovie(facts[0], facts[1], facts[2], facts[3], facts[4]);
+    	Movie mvToDelete=Main.mvsData.getMovie(facts[0], facts[1], facts[2], facts[3], facts[4]);
     	if(mvToDelete!=null) {
     		
-    		MovieData.deleteMovie(mvToDelete);
+    		Main.mvsData.deleteMovie(mvToDelete);
     		
     		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRemoval.fxml"));
 			ControllerSuccessfulRemoval control = new ControllerSuccessfulRemoval();
@@ -67,8 +67,8 @@ public class ControllerDeleteMovie implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		ObservableList<String> list = FXCollections.observableArrayList();
-		for (int i=0;i<MovieData.movie.size();i++) {
-    		list.add(MovieData.movie.get(i).getNameFilm()+" - "+MovieData.movie.get(i).getDurationFilm()+" - "+MovieData.movie.get(i).getFilmRoom()+" - "+MovieData.movie.get(i).getHourMovie()+" - "+MovieData.movie.get(i).getDayMovie());
+		for (int i=0;i<Main.mvsData.movies.size();i++) {
+    		list.add(Main.mvsData.movies.get(i).getNameFilm()+" - "+Main.mvsData.movies.get(i).getDurationFilm()+" - "+Main.mvsData.movies.get(i).getFilmRoom()+" - "+Main.mvsData.movies.get(i).getHourMovie()+" - "+Main.mvsData.movies.get(i).getDayMovie());
 		}
 		functionsAvailableCMB.setItems(list);
 	}

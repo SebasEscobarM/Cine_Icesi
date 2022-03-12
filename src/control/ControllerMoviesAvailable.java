@@ -11,13 +11,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import main.Main;
 import model.Movie;
-import model.MovieData;
 
 public class ControllerMoviesAvailable implements Initializable{
 	
@@ -25,32 +22,28 @@ public class ControllerMoviesAvailable implements Initializable{
     private Button backBTM;
 	
 	@FXML
-    private TableColumn<Movie, String> dateMovieCol;
-
-    @FXML
-    private TableColumn<Movie, String> durationMovieCol;
-
-    @FXML
-    private TableColumn<Movie, String> hourMovieCol;
-
-    @FXML
-    private TableView<Movie> moviesAvailableTV;
-
-    @FXML
-    private TableColumn<Movie, String> nameMovieCol;
-
-    @FXML
-    private TableColumn<Movie, String> roomMovieCol;
+    private TextArea reportArea;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		nameMovieCol.setCellValueFactory(new PropertyValueFactory<>("nameFilm"));
-		durationMovieCol.setCellValueFactory(new PropertyValueFactory<>("durationFilm"));
-		roomMovieCol.setCellValueFactory(new PropertyValueFactory<>("filmRoom"));
-		hourMovieCol.setCellValueFactory(new PropertyValueFactory<>("hourMovie"));
-		dateMovieCol.setCellValueFactory(new PropertyValueFactory<>("dayMovie"));
 		
-		moviesAvailableTV.setItems(MovieData.movie);
+		String report="";
+		for(int i=0;i<Main.mvsData.movies.size();i++) {
+			Movie m=Main.mvsData.movies.get(i);
+			report+=(i+1)+". "+m.getNameFilm()+" - "+m.getDayMovie()+" - "+m.getFilmRoom()+"\n";
+			String users="";
+			for(int j=0;j<m.getChairs().size();j++) {
+				if(m.getChairs().get(j)!=null) {
+					users+="    "+m.getChairs().get(j).getNameUsers()+"\n";
+				}
+			}
+			if(users.equalsIgnoreCase("")) {
+				users="    No users regsitered for this movie.\n";
+			}
+			report+=users;
+		}
+		
+		reportArea.setText(report);
 	}
 	
 	@FXML

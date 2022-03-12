@@ -16,7 +16,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import main.Main;
-import model.UserData;
 
 public class ControllerDeleteSpectator implements Initializable{
 	
@@ -49,10 +48,11 @@ public class ControllerDeleteSpectator implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		//Si se hace cambiar arreglo que se recorre
 		ObservableList<String> list = FXCollections.observableArrayList();
-		for (int i=0;i<UserData.user.size();i++) {
+		/*for (int i=0;i<UserData.user.size();i++) {
 			list.add(UserData.user.get(i).getNameUsers()+" - "+UserData.user.get(i).getIdUsers());
-		}
+		}*/
 		spectatorsAvailableCMB.setItems(list);
 	}
 

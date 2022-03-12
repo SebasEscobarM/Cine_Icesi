@@ -3,7 +3,6 @@ package control;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -21,7 +20,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Main;
 import model.Movie;
-import model.MovieData;
 
 public class ControllerMovieRegistration implements Initializable {
 	
@@ -50,8 +48,7 @@ public class ControllerMovieRegistration implements Initializable {
     void registerFilm(ActionEvent event) throws IOException{
     	String nameFilm = nameFilmTF.getText();
     	
-    	//Minutos.. cambiar
-    	String durationMovie = durationFilmTF.getText()+"hr";
+    	String durationMovie = durationFilmTF.getText()+"min";
     	
     	String filmRoom = filmRoomCMB.getSelectionModel().getSelectedItem();
     	
@@ -64,17 +61,31 @@ public class ControllerMovieRegistration implements Initializable {
     	String dateDMY = ""+day+"/"+month+"/"+year;
     	
     	
-    	if(MovieData.getMovie(nameFilm,durationMovie,filmRoom, movieHour, dateDMY)==null) {
-    		MovieData.addMovie(new Movie(nameFilm,durationMovie,filmRoom,dateDMY,movieHour));
-			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRegistration.fxml"));
-			ControllerSuccessfulRegistration control = new ControllerSuccessfulRegistration();
-			control.setSuperStage((Stage) registerFilmBTM.getScene().getWindow());
-			loader.setController(control);
-			Parent parent = (Parent) loader.load();
-			Stage stage2 = new Stage();
-			Scene scene = new Scene(parent);
-			stage2.setScene(scene);
-			stage2.show();
+    	if(Main.mvsData.getMovie(nameFilm,durationMovie,filmRoom, movieHour, dateDMY)==null) {
+    		
+    		if(Main.mvsData.sameHourDate(new Movie(nameFilm,durationMovie,filmRoom,dateDMY,movieHour))) {
+    			
+    			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionSameHourDay.fxml"));
+        		loader.setController(new ControllerExceptionSameMovie());
+        		Parent parent = (Parent) loader.load();
+        		Stage stage = new Stage();
+        		Scene scene = new Scene(parent);
+        		stage.setScene(scene);
+        		stage.show();
+    		}else {
+    			Main.mvsData.addMovie(new Movie(nameFilm,durationMovie,filmRoom,dateDMY,movieHour));
+    			
+        		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SuccessfulRegistration.fxml"));
+    			ControllerSuccessfulRegistration control = new ControllerSuccessfulRegistration();
+    			control.setSuperStage((Stage) registerFilmBTM.getScene().getWindow());
+    			loader.setController(control);
+    			Parent parent = (Parent) loader.load();
+    			Stage stage2 = new Stage();
+    			Scene scene = new Scene(parent);
+    			stage2.setScene(scene);
+    			stage2.show();
+    		}
+    		
     	} else {
     		//throw new SameMovies();
     		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionSameMovies.fxml"));
