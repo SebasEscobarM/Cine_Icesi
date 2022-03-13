@@ -57,6 +57,17 @@ public class ControllerSpectatorRegistration implements Initializable{
         		stage.setScene(scene);
         		stage.show();
         		
+        		/*
+            	Buscar la manera de que antes de ingresar a las salas se verifique si hay sillas o no, si no hay que salte la excepción
+        		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionFullRoom.fxml"));
+        		loader.setController(new ControllerExceptionFullRoom());
+        		Parent parent = (Parent) loader.load();
+        		Stage stage = new Stage();
+        		Scene scene = new Scene(parent);
+        		stage.setScene(scene);
+        		stage.show();
+        		*/
+        		
     		} else if (infoMovie[2].equalsIgnoreCase("MiniSala")) {
     			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomMiniSala.fxml"));
     			loader.setController(new ControllerRoomMiniSala(movieEdit, nwUser));
@@ -65,6 +76,17 @@ public class ControllerSpectatorRegistration implements Initializable{
         		Scene scene = new Scene(parent);
         		stage.setScene(scene);
         		stage.show();
+        		
+        		/*
+            	Buscar la manera de que antes de ingresar a las salas se verifique si hay sillas o no, si no hay que salte la excepción
+        		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionFullRoom.fxml"));
+        		loader.setController(new ControllerExceptionFullRoom());
+        		Parent parent = (Parent) loader.load();
+        		Stage stage = new Stage();
+        		Scene scene = new Scene(parent);
+        		stage.setScene(scene);
+        		stage.show();
+        		*/
     		}
     		
     	} else {
@@ -76,19 +98,29 @@ public class ControllerSpectatorRegistration implements Initializable{
     		stage.setScene(scene);
     		stage.show();
     	}
-    }
-    
-    @FXML
-    void backAct(ActionEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ConfirmBack.fxml"));
-    	ControllerConfirmBack control = new ControllerConfirmBack();
-    	control.setSuperStage((Stage) backBTM.getScene().getWindow());
-		loader.setController(control);
+    	/*
+    	Buscar la manera de que cuando no haya película seleccionada al añadir usuario salga la excepcion
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionNotSelectedFilm.fxml"));
+		loader.setController(new ControllerExceptionNotSelectedFilm());
 		Parent parent = (Parent) loader.load();
 		Stage stage = new Stage();
 		Scene scene = new Scene(parent);
 		stage.setScene(scene);
 		stage.show();
+		*/
+    }
+    
+    @FXML
+    void backAct(ActionEvent event) throws IOException {
+    	Stage stage = (Stage) this.backBTM.getScene().getWindow();
+		stage.close();
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/CinemaMenu.fxml"));
+		loader.setController(new ControllerCinemaMenu());
+		Parent parent = (Parent) loader.load();
+		Stage stage2 = new Stage();
+		Scene scene = new Scene(parent);
+		stage2.setScene(scene);
+		stage2.show();
     }
 
 	@Override

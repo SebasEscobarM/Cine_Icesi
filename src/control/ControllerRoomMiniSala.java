@@ -182,7 +182,18 @@ public class ControllerRoomMiniSala implements Initializable{
 					e.printStackTrace();
 				}
     			
-        	}
+        	} /*else if(Verificar de alguna forma si la silla ya está ocupada){
+        	
+        		//La idea es que analice y salga la excepción solo cuando se oprima el botón de "seleccionar"
+        		
+        		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionChairOccuped.fxml"));
+				loader.setController(new ControllerExceptionChairOccuped());
+				Parent parent = (Parent) loader.load();
+				Stage stage = new Stage();
+				Scene scene = new Scene(parent);
+				stage.setScene(scene);
+				stage.show();
+        	} */
     	}
     }
 

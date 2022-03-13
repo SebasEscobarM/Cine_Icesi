@@ -5,17 +5,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="132.0" prefWidth="241.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="44.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro Exitoso">
+      <Text layoutX="29.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro Exitoso">
          <font>
-            <Font name="Bodoni Bk BT Book" size="24.0" />
+            <Font name="Bodoni MT" size="26.0" />
          </font>
       </Text>
-      <Button fx:id="continueBTN" layoutX="81.0" layoutY="75.0" mnemonicParsing="false" onAction="#continueApp" style="-fx-background-color: #1169ed;" text="Continuar" textFill="WHITE">
+      <Button fx:id="continueBTN" layoutX="77.0" layoutY="75.0" mnemonicParsing="false" onAction="#continueApp" prefWidth="87.0" style="-fx-background-color: #1169ed;" text="Continuar" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font size="15.0" />
          </font>
       </Button>
    </children>

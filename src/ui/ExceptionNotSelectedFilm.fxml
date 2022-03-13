@@ -7,14 +7,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="183.0" prefWidth="302.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="42.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fallo del sistema">
+      <Text layoutX="42.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fallo del sistema">
          <font>
             <Font name="Bodoni MT" size="31.0" />
          </font>
       </Text>
-      <Text layoutX="21.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No pueden haber dos películas con horas y días iguales. Intente nuevamente. " textAlignment="CENTER" wrappingWidth="259.14013671875">
+      <Text layoutX="13.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No ha seleccionado una película. Seleccione una de las películas disponibles e intente nuevamente. " textAlignment="CENTER" wrappingWidth="275.14013671875">
          <font>
-            <Font size="16.0" />
+            <Font size="17.0" />
          </font>
       </Text>
       <Button fx:id="backBTN" layoutX="111.0" layoutY="138.0" mnemonicParsing="false" onAction="#backAct" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #e80202;" text="Volver" textFill="WHITE">

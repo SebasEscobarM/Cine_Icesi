@@ -44,7 +44,15 @@ public class ControllerRegisterEmployeesWelfare implements Initializable{
 				Scene scene = new Scene(parent);
 				stage.setScene(scene);
 				stage.show();
-			}
+			} /*else if (!id.equals(EmployeeData.employeeRegister.get(i).getIdEmployee()) && i == EmployeeData.employeeRegister.size()-1) {
+				FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionNotMatchWelfare.fxml"));
+				loader.setController(new ControllerExceptionNotMatchWelfare());
+				Parent parent = (Parent) loader.load();
+				Stage stage = new Stage();
+				Scene scene = new Scene(parent);
+				stage.setScene(scene);
+				stage.show();
+			}*/
 		}
 	}
 	
@@ -63,7 +71,7 @@ public class ControllerRegisterEmployeesWelfare implements Initializable{
 				data += line + "\n";
 			}
 			String[] id = data.split("\n");
-			for (int i = 0; i < id.length - 1; i++) {
+			for (int i = 0; i < id.length; i++) {
 				EmployeeData.employeeRegister.add(new Employee(id[i]));
 			}
 			fis.close();

@@ -7,9 +7,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="154.0" prefWidth="303.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="11.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Estas seguro que quieres cancelar?">
+      <Text layoutX="13.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Estas seguro que quieres cancelar?" textAlignment="CENTER" wrappingWidth="276.853515625">
          <font>
-            <Font name="Bodoni Bk BT Book" size="20.0" />
+            <Font name="Bodoni MT" size="22.0" />
          </font>
       </Text>
       <Button fx:id="confirmBTM" layoutX="173.0" layoutY="87.0" mnemonicParsing="false" onAction="#confirmAct" prefHeight="36.0" prefWidth="90.0" style="-fx-background-color: #1169ed;" text="Confirmar" textFill="WHITE">

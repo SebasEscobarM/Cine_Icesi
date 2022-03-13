@@ -19,7 +19,7 @@
          </font>
       </Text>
       <DatePicker fx:id="movieDayDP" layoutX="342.0" layoutY="121.0" />
-      <Text layoutX="39.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duración del filme." wrappingWidth="118.357421875">
+      <Text layoutX="39.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duración del filme. (Minutos)" wrappingWidth="189.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -35,9 +35,9 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <ImageView fitHeight="45.0" fitWidth="189.0" layoutX="34.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="58.0" fitWidth="218.0" layoutX="51.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Desktop/logo_icesi.png" />
+            <Image url="@../../Multimedia/logo_icesi.png" />
          </image>
       </ImageView>
       <Text layoutX="39.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora del filme." wrappingWidth="118.357421875">
@@ -46,23 +46,23 @@
          </font>
       </Text>
       <TextField fx:id="movieTimeTF" layoutX="39.0" layoutY="299.0" prefHeight="25.0" prefWidth="209.0" />
-      <Button fx:id="registerFilmBTM" alignment="CENTER" layoutX="419.0" layoutY="386.0" mnemonicParsing="false" onAction="#registerFilm" style="-fx-background-color: #1169ed;" text="Registrar" textFill="WHITE">
+      <Button fx:id="registerFilmBTM" alignment="CENTER" layoutX="409.0" layoutY="383.0" mnemonicParsing="false" onAction="#registerFilm" prefHeight="33.0" prefWidth="83.0" style="-fx-background-color: #1169ed;" text="Registrar" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="backBTM" alignment="CENTER" layoutX="34.0" layoutY="28.0" mnemonicParsing="false" onAction="#backAct" prefHeight="25.0" prefWidth="19.0" style="-fx-background-radius: 100;">
+      <Button fx:id="backBTM" alignment="CENTER" layoutX="16.0" layoutY="24.0" mnemonicParsing="false" onAction="#backAct" prefHeight="45.0" prefWidth="46.0" style="-fx-background-radius: 100;">
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="23.0">
+            <ImageView fitHeight="35.0" fitWidth="30.0">
                <image>
-                  <Image url="@../../../../../Desktop/icons8-atrás-64.png" />
+                  <Image url="@../../Multimedia/icons8-atrás-64.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Text layoutX="145.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de películas">
+      <Text layoutX="127.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de películas">
          <font>
-            <Font name="Bodoni Bk BT Book" size="38.0" />
+            <Font name="Bodoni MT" size="40.0" />
          </font>
       </Text>
       <ComboBox fx:id="filmRoomCMB" layoutX="39.0" layoutY="242.0" prefHeight="25.0" prefWidth="209.0" />
