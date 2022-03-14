@@ -32,7 +32,7 @@ public class ControllerSpectatorRegistration implements Initializable{
     private TextField idUserTF;
 
     @FXML
-    private TextField nameUserTF;
+    public TextField nameUserTF;
 
     @FXML
     private ComboBox<String> selectedMovieCMB;
@@ -57,6 +57,7 @@ public class ControllerSpectatorRegistration implements Initializable{
         		stage.setScene(scene);
         		stage.show();
         		
+        		
     		} else if (infoMovie[2].equalsIgnoreCase("MiniSala")) {
     			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomMiniSala.fxml"));
     			loader.setController(new ControllerRoomMiniSala(movieEdit, nwUser));
@@ -65,6 +66,7 @@ public class ControllerSpectatorRegistration implements Initializable{
         		Scene scene = new Scene(parent);
         		stage.setScene(scene);
         		stage.show();
+        		
     		}
     		
     	} else {
@@ -80,15 +82,15 @@ public class ControllerSpectatorRegistration implements Initializable{
     
     @FXML
     void backAct(ActionEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ConfirmBack.fxml"));
-    	ControllerConfirmBack control = new ControllerConfirmBack();
-    	control.setSuperStage((Stage) backBTM.getScene().getWindow());
-		loader.setController(control);
+    	Stage stage = (Stage) this.backBTM.getScene().getWindow();
+		stage.close();
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/CinemaMenu.fxml"));
+		loader.setController(new ControllerCinemaMenu());
 		Parent parent = (Parent) loader.load();
-		Stage stage = new Stage();
+		Stage stage2 = new Stage();
 		Scene scene = new Scene(parent);
-		stage.setScene(scene);
-		stage.show();
+		stage2.setScene(scene);
+		stage2.show();
     }
 
 	@Override

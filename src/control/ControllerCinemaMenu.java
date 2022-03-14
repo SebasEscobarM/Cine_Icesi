@@ -50,8 +50,8 @@ public class ControllerCinemaMenu {
 
 	@FXML
 	void registerUser(ActionEvent event) throws IOException {
-		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/OptionsSpectator.fxml"));
-		loader.setController(new ControllerOptionsSpectator());
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SpectatorRegistration.fxml"));
+		loader.setController(new ControllerSpectatorRegistration());
 		Parent parent = (Parent) loader.load();
 		Stage stage = new Stage();
 		Scene scene = new Scene(parent);

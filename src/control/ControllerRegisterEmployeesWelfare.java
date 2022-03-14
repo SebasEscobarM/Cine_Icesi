@@ -33,8 +33,10 @@ public class ControllerRegisterEmployeesWelfare implements Initializable{
 	@FXML
 	void access(ActionEvent event) throws IOException {
 		String id = idTF.getText();
+		boolean accesed=false;
 		for(int i=0;i<EmployeeData.employeeRegister.size();i++) {
 			if(id.equals(EmployeeData.employeeRegister.get(i).getIdEmployee())) {
+				accesed=true;
 				Stage currentStage = (Stage) accessBTM.getScene().getWindow();
 				currentStage.close();
 				FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/CinemaMenu.fxml"));
@@ -44,8 +46,18 @@ public class ControllerRegisterEmployeesWelfare implements Initializable{
 				Scene scene = new Scene(parent);
 				stage.setScene(scene);
 				stage.show();
-			}
+			} 
 		}
+		if(!accesed){
+			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionNotMatchWelfare.fxml"));
+			loader.setController(new ControllerExceptionNotMatchWelfare());
+			Parent parent = (Parent) loader.load();
+			Stage stage = new Stage();
+			Scene scene = new Scene(parent);
+			stage.setScene(scene);
+			stage.show();
+		}
+		
 	}
 	
 	public static void importarID() {
@@ -63,7 +75,7 @@ public class ControllerRegisterEmployeesWelfare implements Initializable{
 				data += line + "\n";
 			}
 			String[] id = data.split("\n");
-			for (int i = 0; i < id.length - 1; i++) {
+			for (int i = 0; i < id.length; i++) {
 				EmployeeData.employeeRegister.add(new Employee(id[i]));
 			}
 			fis.close();

@@ -61,7 +61,17 @@ public class ControllerDeleteMovie implements Initializable{
 			Scene scene = new Scene(parent);
 			stage2.setScene(scene);
 			stage2.show();
-    	}
+    	} 
+    	/*
+    	Buscar la manera de que cuando no haya película seleccionada o no haya creada y intente borrar una, salga la excepcion
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionNotSelectedFilm.fxml"));
+		loader.setController(new ControllerExceptionNotSelectedFilm());
+		Parent parent = (Parent) loader.load();
+		Stage stage = new Stage();
+		Scene scene = new Scene(parent);
+		stage.setScene(scene);
+		stage.show();
+		*/
     }
 
 	@Override

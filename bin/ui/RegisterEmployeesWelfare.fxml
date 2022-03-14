@@ -18,7 +18,7 @@
       </Text>
       <ImageView fitHeight="72.0" fitWidth="224.0" layoutX="40.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Desktop/logo_icesi.png" />
+            <Image url="@../../Multimedia/logo_icesi.png" />
          </image>
       </ImageView>
       <Button fx:id="accessBTM" alignment="CENTER" layoutX="116.0" layoutY="83.0" mnemonicParsing="false" onAction="#access" style="-fx-background-color: #1169ed;" text="Ingresar" textAlignment="CENTER" textFill="WHITE">

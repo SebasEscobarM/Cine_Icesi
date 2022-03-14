@@ -202,9 +202,12 @@ public class ControllerRoomSalaMedia implements Initializable{
 
     @FXML
     void confirmChair(ActionEvent event) {
+    	
+    	boolean reserved=false;
     	for(int i=0;i<btns.size();i++) {
-    		if(prSlctd.get(0)==btns.get(i))
+    		if(mvEdit.getChairs().get(i)==null && prSlctd.get(0)==btns.get(i))
         	{
+    			reserved=true;
         		mvEdit.addUserToAChair(nwUser, i);
         		Main.mvsData.save();
         		
@@ -225,6 +228,21 @@ public class ControllerRoomSalaMedia implements Initializable{
 				}
     			
         	}
+    	}
+    	if(!reserved) {
+    		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionChairOccuped.fxml"));
+			loader.setController(new ControllerExceptionChairOccuped());
+			Parent parent;
+			try {
+				parent = (Parent) loader.load();
+				Stage stage = new Stage();
+				Scene scene = new Scene(parent);
+				stage.setScene(scene);
+				stage.show();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
     	}
     }
 
