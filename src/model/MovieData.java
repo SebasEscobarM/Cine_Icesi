@@ -18,6 +18,7 @@ public class MovieData {
 	public ArrayList<Movie> getArrL() {
 		return movies;
 	}
+	
 	public void save() {
 		try {
 			Gson gson=new Gson();

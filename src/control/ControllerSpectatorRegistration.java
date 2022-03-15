@@ -43,40 +43,61 @@ public class ControllerSpectatorRegistration implements Initializable{
     	String nameUser = nameUserTF.getText();
     	String idUser = idUserTF.getText();
     	String movie = selectedMovieCMB.getSelectionModel().getSelectedItem();
-    	String[] infoMovie = movie.split(" - ");
     	User nwUser=new User(nameUser, idUser);
-    	Movie movieEdit=Main.mvsData.getMovie(infoMovie[0],infoMovie[1],infoMovie[2], infoMovie[3], infoMovie[4]);
-
-    	if(!(movieEdit.sameId(nwUser))) {
-    		if (infoMovie[2].equalsIgnoreCase("Sala Media")) {
-    			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomSalaMedia.fxml"));
-        		loader.setController(new ControllerRoomSalaMedia(movieEdit, nwUser));
-        		Parent parent = (Parent) loader.load();
-        		Stage stage = new Stage();
-        		Scene scene = new Scene(parent);
-        		stage.setScene(scene);
-        		stage.show();
-        		
-        		
-    		} else if (infoMovie[2].equalsIgnoreCase("MiniSala")) {
-    			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomMiniSala.fxml"));
-    			loader.setController(new ControllerRoomMiniSala(movieEdit, nwUser));
-        		Parent parent = (Parent) loader.load();
-        		Stage stage = new Stage();
-        		Scene scene = new Scene(parent);
-        		stage.setScene(scene);
-        		stage.show();
-        		
-    		}
-    		
-    	} else {
-    		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionSameIdUser.fxml"));
-    		loader.setController(new ControllerExceptionSameIdUser());
+    	 
+    	if(movie==null){
+    		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionNotSelectedFilm.fxml"));
+    		loader.setController(new ControllerExceptionNotSelectedFilm());
     		Parent parent = (Parent) loader.load();
     		Stage stage = new Stage();
     		Scene scene = new Scene(parent);
     		stage.setScene(scene);
     		stage.show();
+    	}else {
+    		String[] infoMovie = movie.split(" - ");
+    		Movie movieEdit=Main.mvsData.getMovie(infoMovie[0],infoMovie[1],infoMovie[2], infoMovie[3], infoMovie[4]);
+		    if(!(movieEdit.isFull())) {
+		    	if(!(movieEdit.sameId(nwUser))) {
+		    		if (infoMovie[2].equalsIgnoreCase("Sala Media")) {
+		    			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomSalaMedia.fxml"));
+		        		loader.setController(new ControllerRoomSalaMedia(movieEdit, nwUser));
+		        		Parent parent = (Parent) loader.load();
+		        		Stage stage = new Stage();
+		        		Scene scene = new Scene(parent);
+		        		stage.setScene(scene);
+		        		stage.show();
+		        		
+		        		
+		    		} else if (infoMovie[2].equalsIgnoreCase("MiniSala")) {
+		    			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RoomMiniSala.fxml"));
+		    			loader.setController(new ControllerRoomMiniSala(movieEdit, nwUser));
+		        		Parent parent = (Parent) loader.load();
+		        		Stage stage = new Stage();
+		        		Scene scene = new Scene(parent);
+		        		stage.setScene(scene);
+		        		stage.show();
+		        		
+		    		}
+		    		
+		    	} else {
+		    		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionSameIdUser.fxml"));
+		    		loader.setController(new ControllerExceptionSameIdUser());
+		    		Parent parent = (Parent) loader.load();
+		    		Stage stage = new Stage();
+		    		Scene scene = new Scene(parent);
+		    		stage.setScene(scene);
+		    		stage.show();
+		    	}
+		    }else {
+		    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/ExceptionFullRoom.fxml"));
+	    		loader.setController(new ControllerExceptionFullRoom());
+	    		Parent parent = (Parent) loader.load();
+	    		Stage stage = new Stage();
+	    		Scene scene = new Scene(parent);
+	    		stage.setScene(scene);
+	    		stage.show();
+		    }
+    			
     	}
     }
     

@@ -33,6 +33,17 @@ public class Movie {
 		}
 	}
 	
+	public boolean isFull() {
+		boolean full=true;
+		for(int i=0;i<chairsRoomData.size();i++) {
+			if(chairsRoomData.get(i)==null) {
+				full=false;
+				break;
+			}
+		}
+		return full;
+	}
+	
 	public boolean sameId(User us) {
 		boolean ans=false;
 		for(int i=0;i<chairsRoomData.size();i++) {
